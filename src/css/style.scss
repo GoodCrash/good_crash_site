@@ -6,11 +6,14 @@
  Primary
 
 ============================*/
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   font-size: 100%;
