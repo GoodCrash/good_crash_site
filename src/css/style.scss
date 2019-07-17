@@ -216,3 +216,77 @@ header {
     display: none;
   }
 }
+
+/*===========================
+
+ Footer
+
+============================*/
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 289px;
+  z-index: 1000;
+}
+
+.site-logo {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 84px;
+  height: 66px;
+  background: url("../img/GoodCrash.svg") center no-repeat;
+  background-size: cover;
+}
+
+.my-contact {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 0.825rem;
+}
+
+.im-in-social {
+  display: grid;
+  grid-template-columns: 20px 20px 20px;
+  grid-gap: 15px;
+  justify-items: end;
+  align-items: center;
+  position: absolute;
+  width: auto;
+  bottom: 25px;
+  right: 0;
+}
+
+.facebook,
+.vk,
+.twitter {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.facebook {
+  background: url("../img/facebook.svg") center no-repeat;
+  background-size: cover;
+}
+
+.vk {
+  background: url("../img/vk.svg") center no-repeat;
+  background-size: cover;
+}
+
+.twitter {
+  background: url("../img/twitter.svg") center no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-width: $mobile_middle) {
+  footer {
+    width: 100%;
+  }
+  .site-logo {
+    left: 15px;
+  }
+}
