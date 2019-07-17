@@ -1,19 +1,39 @@
-<!DOCTYPE html>
+doctype html
 html(lang="en")
-head
-  meta(charset="UTF-8")
-  meta(name="viewport" content="width=device-width, initial-scale=1.0")
-  meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
-  meta(name="description" content="I'm a GoodCrash, I'm a indie games developer")
-  meta(name="author" content="Aleksandr Lipovskiy")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    meta(name="description" content="I'm a GoodCrash, I'm a indie games developer")
+    meta(name="author" content="Aleksandr Lipovskiy")
 
-  meta(property="og:site_name" content="goodcrash")
-  meta(property="og:url" content="https://goodcrash.games")
-  meta(property="og:title" content="GoodCrash | Indie games developer")
-  meta(property="og:description" content="Hello! I'm a GoodCrash, I'm a indie games developer")
-  meta(property="og:image" content="https://goodcrash.games/img/goodcrash.png")
-  meta(property="og:type" content="website")
+    meta(property="og:site_name" content="goodcrash")
+    meta(property="og:url" content="https://goodcrash.games")
+    meta(property="og:title" content="GoodCrash | Indie games developer")
+    meta(property="og:description" content="Hello! I'm a GoodCrash, I'm a indie games developer")
+    meta(property="og:image" content="https://goodcrash.games/img/goodcrash.png")
+    meta(property="og:type" content="website")
 
-  title GoodCrash | Indie game developer
-body
-  
+    title GoodCrash | Indie games developer
+    
+  body(id="body")
+    header
+      div(class="nav-trigger")
+        - var countPoints = new Array(9);
+        each i in countPoints
+          div(class="nav-trigger-point")
+
+      div(class="site-title") goodcrash.games
+
+      div(class="header-tools")
+        div(class="main-chat")
+          div(class="main-chat-icon")
+          div(class="main-chat-count-new") 0
+
+        div(class="lang-select-links")
+          div(class="lang-selectors ru-lang left") ru
+          div(class="lang-selectors en-lang") en
+
+        div(class="volume-trigger")
+
+        div(class="data-time") 20:30 17.07.2019
