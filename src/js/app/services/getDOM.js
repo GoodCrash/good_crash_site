@@ -1,0 +1,23 @@
+'use strict';
+
+export function getDOM() {
+  return {
+    body: document.getElementById('body'),
+    main: document.getElementById('main'),
+    navTrigger: document.querySelector('.nav-trigger'),
+    dataTimeEl: document.querySelector('.data-time'),
+    volumeTrigger: document.querySelector('.volume-trigger'),
+    iSayHelloHello: document.querySelector('.i-say-hello-hello'),
+    iSayHelloMyName: document.querySelector('.i-say-hello-my-name'),
+    iSayHelloMyNicname: document.querySelector('.i-say-hello-my-nicname'),
+    iSayHelloAndIm: document.querySelector('.i-say-hello-and-im'),
+    iSayHelloIndie: document.querySelector('.i-say-hello-indie'),
+    iSayHelloDeveloper: document.querySelector('.i-say-hello-developer'),
+    langSelectors: document.querySelectorAll('.lang-selectors'),
+    domForTranslate: document.getElementsByName('i18n'),
+    chatIcon: document.querySelector('.main-chat'),
+    chatCount: document.querySelector('.main-chat-count-new'),
+    myGames: document.querySelector('.my-games'),
+    myGarbige: document.querySelector('.my-garbige'),
+  };
+}
