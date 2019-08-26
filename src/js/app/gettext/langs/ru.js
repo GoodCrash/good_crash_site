@@ -5,19 +5,19 @@ export const ru = {
   // use when run animation
   main: {
     hello: {
-      '0': 'Привет!',
+      '0': 'Привет! ',
     },
     aleks: {
-      '0': 'Я Aleks',
+      '0': 'Я Aleks ',
     },
     goodcrash: {
-      '0': 'GoodCrash',
+      '0': 'GoodCrash. ',
     },
     i: {
-      '0': 'И я',
+      '0': 'Я ',
     },
     indie: {
-      '0': 'indie game',
+      '0': 'Indie game ',
     },
     dev: {
       '0': 'разработчик',
@@ -39,12 +39,12 @@ export const ru = {
       '7': 'Две есть, а без третьей тяжело',
     },
   },
-  'main hello': 'Привет!',
-  'main aleks': 'Я Aleks',
-  'main goodcrash': 'GoodCrash',
-  'main i': 'И я',
-  'main indie': 'indie game',
-  'main dev': 'разработчик',
+  'main hello': 'Привет! ',
+  'main aleks': 'Я Aleks ',
+  'main goodcrash': 'GoodCrash. ',
+  'main i': 'Я ',
+  'main indie': 'Indie game ',
+  'main dev': 'разработчик ',
   messages: 'Сообщения',
   send: 'Отправить',
   'error load': 'Что то действительно пошло не так, но я уже работаю над этим',

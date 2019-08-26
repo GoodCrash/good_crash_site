@@ -12,6 +12,7 @@ module.exports = {
   ],
   plugins: ['babel', 'import', 'json', 'prettier'],
   parserOptions: {
+    ecmaVersion: 8,
     sourceType: 'module',
     parser: 'babel-eslint',
   },

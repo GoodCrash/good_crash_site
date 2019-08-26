@@ -25,8 +25,53 @@ body {
 
 body {
   font-family: "OpenSans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: $white;
   background-color: $crash;
+  &[lang="ru"] {
+    .ru-lang {
+      font-weight: bold;
+    }
+  }
+  &[lang="en"] {
+    .en-lang {
+      font-weight: bold;
+    }
+  }
+}
+
+a {
+  @include animation-when-event($animation_time, $animation_time_delay);
+}
+
+.cursor {
+  font-weight: bold;
+  color: $white;
+  background-color: $white;
+  animation-name: print;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.load .cursor {
+  display: none;
+  animation-name: none;
+}
+
+@keyframes print {
+  25% {
+    background-color: $black;
+    color: $black;
+  }
+  50% {
+    background-color: $white;
+    color: $white;
+  }
+  75% {
+    background-color: $black;
+    color: $black;
+  }
 }
 
 /*===========================

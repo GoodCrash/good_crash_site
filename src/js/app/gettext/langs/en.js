@@ -2,21 +2,22 @@ export const en = {
   home: 'Home',
   games: 'Games',
   garbage: 'Garbage',
+  // use when run animation
   main: {
     hello: {
-      '0': 'Hello!',
+      '0': 'Hello! ',
     },
     aleks: {
-      '0': "I'm Aleks",
+      '0': "I'm Aleks ",
     },
     goodcrash: {
-      '0': 'GoodCrash',
+      '0': 'GoodCrash. ',
     },
     i: {
-      '0': "And I'm an",
+      '0': "I'm an ",
     },
     indie: {
-      '0': 'indie game',
+      '0': 'Indie game ',
     },
     dev: {
       '0': 'developer',
@@ -39,11 +40,11 @@ export const en = {
       '7': "There are two, and without a third it's hard",
     },
   },
-  'main hello': 'Hello!',
-  'main aleks': "I'm Aleks",
-  'main goodcrash': 'GoodCrash',
-  'main i': "And I'm an",
-  'main indie': 'indie game',
+  'main hello': 'Hello! ',
+  'main aleks': "I'm Aleks ",
+  'main goodcrash': 'GoodCrash. ',
+  'main i': "I'm an ",
+  'main indie': 'Indie game ',
   'main dev': 'developer',
   messages: 'Messages',
   send: 'Send',
