@@ -2,6 +2,7 @@
 
 import { getDOM } from './services/getDOM';
 import { locale } from './gettext/locale';
+import { runClock } from './services/clock';
 import * as i18n from './services/i18n';
 import * as animate from './services/animate/index.js';
 
@@ -18,6 +19,14 @@ export default class App {
 
   set isLoaded(value) {
     this._isLoaded = value;
+  }
+
+  /**
+   * Set clock in header tools and run preloader
+   */
+  init() {
+    runClock(this.DOM.dataTimeEl);
+    this.run();
   }
 
   run() {

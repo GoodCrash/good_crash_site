@@ -5,7 +5,7 @@ import App from './app/App.js';
 
 window.onload = function() {
   const app = new App();
-  app.run();
+  app.init();
 
   // change lang when clicl lang selector
   for (let langSelector of app.DOM.langSelectors) {

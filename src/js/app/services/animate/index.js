@@ -35,7 +35,7 @@ export function printText(container, text) {
               printStrings(text[i], () => {
                 printWords();
               });
-            }, 250);
+            }, animateIntervals.timeOut);
           } else if (i == countStrings) {
             resolve();
           }
@@ -94,7 +94,7 @@ export function deleteText(container, text) {
               deleteStrings(text[i], () => {
                 deleteWords();
               });
-            }, 250);
+            }, animateIntervals.timeOut);
           } else if (i == 0) {
             resolve();
           }
