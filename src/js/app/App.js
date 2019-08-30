@@ -5,12 +5,15 @@ import { locale } from './gettext/locale';
 import { runClock } from './services/clock';
 import * as i18n from './services/i18n';
 import * as animate from './services/animate/index.js';
+import { Messenger } from './models/Messenger';
 
 export default class App {
   constructor() {
     this.DOM = getDOM();
     this.lang = i18n.getCurrentLang();
+    this.messenger = new Messenger(this);
     this._isLoaded = false;
+    this._isSoundVolue = true;
   }
 
   get isLoaded() {
@@ -19,6 +22,14 @@ export default class App {
 
   set isLoaded(value) {
     this._isLoaded = value;
+  }
+
+  get isSoundVolue() {
+    return this._isSoundVolue;
+  }
+
+  set isSoundVolue(value) {
+    this._isSoundVolue = value;
   }
 
   /**
@@ -46,6 +57,11 @@ export default class App {
     } else {
       i18n.changeLang(this.DOM.body, this.lang, this.DOM.domForTranslate, true);
     }
+  }
+
+  ofOnSound(el) {
+    el.setAttribute('volume', !this.isSoundVolue);
+    this.isSoundVolue = !this.isSoundVolue;
   }
 
   /**

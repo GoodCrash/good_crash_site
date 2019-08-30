@@ -1,0 +1,207 @@
+.messenger {
+  display: none;
+  position: fixed;
+  top: 40px;
+  right: 10px;
+  width: 50%;
+  max-width: 450px;
+  min-width: 300px;
+  height: -webkit-calc(100% - 80px);
+  height: calc(100% - 80px);
+  color: $white;
+  background: $black-dark;
+  border: 2px solid $black;
+  @include box-shadow(0, 1px, 3px, $black);
+  z-index: 8000;
+}
+
+.messenger-open .messenger {
+  display: block;
+}
+
+.messenger-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: $black;
+  border: 1px solid $black-dark;
+}
+
+.messenger-header-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-size: 0.825rem;
+  line-height: 0.825rem;
+}
+
+.messenger-header-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  background: $crash;
+  border: 1px solid $crash;
+  cursor: pointer;
+  @include animation-when-event($animation_time, $animation_time_delay);
+  &:hover {
+    background: $crash;
+  }
+}
+
+.messenger-header-close-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+  background: $white;
+  @include transform(-50%, -50%, 0);
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background: inherit;
+  }
+  &::before {
+    @include transform(-50%, 0, -45deg);
+  }
+  &::after {
+    @include transform(-50%, 0, 45deg);
+  }
+}
+
+.messenger-body {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: -webkit-calc(100% - 200px);
+  height: calc(100% - 200px);
+  padding: 10px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.messenger-message-ctx,
+.messenger-message-animate {
+  position: relative;
+  width: 80%;
+  height: auto;
+  margin: 5px 0;
+  padding: 10px;
+  overflow: hidden;
+  &.you {
+    margin-left: 20%;
+    background: $black;
+  }
+}
+
+.messenger-message-authorb {
+  position: relative;
+  width: 100%;
+  height: auto;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.messenger-message-body {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 0.825rem;
+  line-height: 1.25rem;
+}
+
+.messenger-message-animate-pen {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: url("../img/edit.png") center no-repeat;
+  background-size: cover;
+  @include transform(0, 0, 0);
+  animation-duration: 1s;
+  animation-name: animated-pen;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animated-pen {
+  from {
+    @include transform(0, 0, 0);
+  }
+  to {
+    @include transform(0, 0, -10deg);
+  }
+}
+
+.messenger-message-animate-dotted {
+  position: relative;
+  display: inline-block;
+  margin-left: 17px;
+  width: 12px;
+  height: 12px;
+}
+
+.messenger-send {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 170px;
+  padding: 10px;
+  border-top: 1px solid $black;
+}
+
+.messenger-send-input {
+  position: relative;
+  width: 100%;
+  height: 110px;
+}
+
+textarea {
+  &#messenger {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    resize: none;
+    color: $white;
+    background: $black;
+    border: 1px solid $black;
+  }
+}
+
+.messenger-send-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 0.4rem 0.825rem;
+  font-size: 0.825rem;
+  color: $white;
+  background: $blue;
+  cursor: pointer;
+  @include box-shadow(0, 1px, 1px, $blue-dark);
+  &:hover {
+    @include box-shadow(0, 0, 1px, $blue-dark);
+  }
+}
+
+@media only screen and (max-width: $mobile_small) {
+  .messenger {
+    height: -webkit-calc(100% - 55px);
+    height: calc(100% - 55px);
+  }
+}

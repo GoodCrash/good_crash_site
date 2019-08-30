@@ -19,5 +19,10 @@ export function getDOM() {
     chatCount: document.querySelector('.main-chat-count-new'),
     myGames: document.querySelector('.my-games'),
     myGarbige: document.querySelector('.my-garbige'),
+    messengerClose: document.querySelector('.messenger-header-close'),
+    messengerBody: document.querySelector('.messenger-body'),
+    messengerMessage: document.querySelector('.messenger-message-body'),
+    messengerInput: document.getElementById('messenger'),
+    messengerBtn: document.querySelector('.messenger-send-btn'),
   };
 }

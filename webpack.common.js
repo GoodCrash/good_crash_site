@@ -12,7 +12,7 @@ module.exports = {
       favicon: './src/favicon.ico',
       filename: 'index.html',
       template: './src/index.pug',
-    })
+    }),
   ],
   output: {
     filename: 'js/index.js',
@@ -20,7 +20,7 @@ module.exports = {
   },
   module: {
     rules: [
-      { 
+      {
         test: /\.pug?$/,
         loader: 'pug-loader',
         options: {
@@ -36,8 +36,8 @@ module.exports = {
               name: 'img/[name].[ext]',
               publicPath: '../',
             },
-          }
-        ]
+          },
+        ],
       },
       {
         test: /\.mp3$/,
@@ -46,9 +46,9 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: 'audio/[name].[ext]',
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
       {
         test: /\.(woff|woff2|ttf|eot)$/,
@@ -59,9 +59,9 @@ module.exports = {
               name: 'fonts/[name].[ext]',
               publicPath: '../',
             },
-          }
-        ]
-      }
-    ]
-  }
+          },
+        ],
+      },
+    ],
+  },
 };
