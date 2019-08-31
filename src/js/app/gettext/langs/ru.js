@@ -3,6 +3,8 @@ export const ru = {
   games: 'Игры',
   about: 'Обо мне',
   garbage: 'Мусор',
+  'my-main': 'мой майл',
+  'my-social': 'Я в социальных',
   // use when run animation
   main: {
     hello: {

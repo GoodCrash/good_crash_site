@@ -3,6 +3,8 @@ export const en = {
   games: 'Games',
   about: 'About me',
   garbage: 'Garbage',
+  'my-main': 'my email',
+  'my-social': 'my social',
   // use when run animation
   main: {
     hello: {
