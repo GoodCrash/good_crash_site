@@ -8,6 +8,10 @@ window.onload = function() {
   const app = new App();
   app.init();
 
+  app.DOM.navTrigger.onclick = () => {
+    app.openCloseNav();
+  };
+
   document.onclick = () => {
     if (app.isLoaded && !app.messenger.isSendedFirstMessage) {
       app.messenger.sendFirstMessage();

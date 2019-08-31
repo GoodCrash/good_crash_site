@@ -1,6 +1,7 @@
 export const ru = {
   home: 'Главная',
   games: 'Игры',
+  about: 'Обо мне',
   garbage: 'Мусор',
   // use when run animation
   main: {

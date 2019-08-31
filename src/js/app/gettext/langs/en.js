@@ -1,6 +1,7 @@
 export const en = {
   home: 'Home',
   games: 'Games',
+  about: 'About me',
   garbage: 'Garbage',
   // use when run animation
   main: {

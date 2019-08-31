@@ -12,7 +12,7 @@ export default class App {
     this.DOM = getDOM();
     this.lang = i18n.getCurrentLang();
     this.messenger = new Messenger(this);
-    this._isLoaded = false;
+    this._isLoaded = true;
     this._isSoundVolue = true;
   }
 
@@ -41,8 +41,11 @@ export default class App {
   }
 
   run() {
-    console.log(this.lang);
     this._start();
+  }
+
+  openCloseNav() {
+    this.DOM.body.classList.toggle('nav-is-open');
   }
 
   clickLangSelector(langSelector) {
@@ -124,8 +127,6 @@ export default class App {
    * Use i18n for translate site when window onload
    */
   _loadWithCurrentLang() {
-    if (document.documentElement.getAttribute('lang') != this.lang) {
-      i18n.changeLang(this.DOM.body, this.lang, this.DOM.domForTranslate, true);
-    }
+    i18n.changeLang(this.DOM.body, this.lang, this.DOM.domForTranslate, true);
   }
 }

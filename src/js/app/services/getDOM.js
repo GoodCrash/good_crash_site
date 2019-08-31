@@ -5,6 +5,7 @@ export function getDOM() {
     body: document.getElementById('body'),
     main: document.getElementById('main'),
     navTrigger: document.querySelector('.nav-trigger'),
+    navLinks: document.querySelectorAll('.nav-link'),
     dataTimeEl: document.querySelector('.data-time'),
     volumeTrigger: document.querySelector('.volume-trigger'),
     iSayHelloHello: document.querySelector('.i-say-hello-hello'),

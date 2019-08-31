@@ -3,6 +3,7 @@
 @import "vars";
 @import "mixins";
 @import "colors";
+@import "nav";
 @import "messanger";
 
 /*===========================
@@ -408,7 +409,9 @@ footer {
 
 .facebook,
 .vk,
-.twitter {
+.twitter,
+.instagram,
+.youtube {
   position: relative;
   width: 20px;
   height: 20px;
@@ -426,6 +429,16 @@ footer {
 
 .twitter {
   background: url("../img/twitter.svg") center no-repeat;
+  background-size: cover;
+}
+
+.instagram {
+  background: url("../img/instagram.svg") center no-repeat;
+  background-size: cover;
+}
+
+.youtube {
+  background: url("../img/youtube.svg") center no-repeat;
   background-size: cover;
 }
 
