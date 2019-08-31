@@ -10,22 +10,15 @@ module.exports = merge(common, {
     contentBase: path.resolve(__dirname, 'dist'),
     port: 9000,
     historyApiFallback: true,
-    hot: true
+    host: '0.0.0.0',
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   module: {
     rules: [
       {
         test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ]
-      }
-    ]
-  }
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
+    ],
+  },
 });

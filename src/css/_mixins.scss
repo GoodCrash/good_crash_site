@@ -10,3 +10,23 @@
 @mixin box-shadow($x, $y, $blur, $color) {
   box-shadow: $x $y $blur 0px $color;
 }
+
+@mixin bg-glitch-smoky($color, $t) {
+  background: repeating-linear-gradient(
+    0deg,
+    $color 0px,
+    $color 1px,
+    transparent 2px,
+    transparent $t
+  );
+}
+
+@mixin bg-glitch-red($color, $t) {
+  background: repeating-linear-gradient(
+    0deg,
+    $red 0px,
+    $red 1px,
+    transparent 1px,
+    transparent $t
+  );
+}

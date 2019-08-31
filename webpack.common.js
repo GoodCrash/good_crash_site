@@ -13,6 +13,21 @@ module.exports = {
       filename: 'index.html',
       template: './src/index.pug',
     }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: 'pages/games.html',
+      template: './src/pages/games.pug',
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: 'pages/about.html',
+      template: './src/pages/about.pug',
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: 'pages/garbage.html',
+      template: './src/pages/garbage.pug',
+    }),
   ],
   output: {
     filename: 'js/index.js',

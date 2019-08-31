@@ -8,6 +8,7 @@ nav {
   height: auto;
   min-height: 190px;
   background: $black-dark;
+  @include box-shadow(0, 1px, 3px, $black);
   z-index: 6000;
 }
 

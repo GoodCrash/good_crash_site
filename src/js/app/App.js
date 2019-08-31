@@ -5,6 +5,7 @@ import { locale } from './gettext/locale';
 import { runClock } from './services/clock';
 import * as i18n from './services/i18n';
 import * as animate from './services/animate/index.js';
+import * as navigation from './services/navigation';
 import { Messenger } from './models/Messenger';
 
 export default class App {
@@ -65,6 +66,12 @@ export default class App {
   ofOnSound(el) {
     el.setAttribute('volume', !this.isSoundVolue);
     this.isSoundVolue = !this.isSoundVolue;
+  }
+
+  navigate(url) {
+    this._removeClassListForNav();
+    console.log(url);
+    navigation.navigatingToUrl(url, this.lang, this.DOM.pagesContent);
   }
 
   /**
@@ -128,5 +135,11 @@ export default class App {
    */
   _loadWithCurrentLang() {
     i18n.changeLang(this.DOM.body, this.lang, this.DOM.domForTranslate, true);
+  }
+
+  _removeClassListForNav() {
+    if (this.DOM.body.classList.contains('nav-is-open')) {
+      this.DOM.body.classList.remove('nav-is-open');
+    }
   }
 }

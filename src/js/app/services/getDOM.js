@@ -4,6 +4,7 @@ export function getDOM() {
   return {
     body: document.getElementById('body'),
     main: document.getElementById('main'),
+    pagesContent: document.querySelector('.pages-content'),
     navTrigger: document.querySelector('.nav-trigger'),
     navLinks: document.querySelectorAll('.nav-link'),
     dataTimeEl: document.querySelector('.data-time'),
