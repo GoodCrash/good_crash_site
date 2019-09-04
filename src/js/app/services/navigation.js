@@ -62,6 +62,7 @@ function _loadPageToUrl(url, lang, container) {
       _fillPage(url, lang, container, getResponse());
     })
     .catch(err => {
+      // TODO send me mail with error
       console.log(err.message);
     });
 }

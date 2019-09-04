@@ -87,6 +87,13 @@ export default class App {
    */
   _loadPage() {
     this._loadWithCurrentLang();
+
+    let url = navigation.getCurrentUrl();
+    if (url != '/') {
+      navigation.navigatingToUrl(url, this.lang, this.DOM.pagesContent, false);
+    }
+
+    navigation.listenToHistiryPages(this.lang, this.DOM.pagesContent);
   }
 
   /**
