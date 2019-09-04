@@ -46,6 +46,12 @@ window.onload = function() {
       app.navigate(this.getAttribute('href'));
     };
   }
+
+  for (let navFolder of app.DOM.navFolders) {
+    navFolder.onclick = function() {
+      app.navigate(this.getAttribute('name'));
+    };
+  }
 };
 
 if (process.env.NODE_ENV !== 'production') {
