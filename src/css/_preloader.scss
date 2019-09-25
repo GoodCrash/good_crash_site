@@ -1,0 +1,347 @@
+.preloader {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $black-dark;
+  z-index: 10000;
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &.glitch {
+    &::before {
+      opacity: 0.3;
+      @include bg-glitch-smoky(5px);
+      animation-duration: 9s;
+      animation-name: perload-lines-smoky;
+      animation-iteration-count: infinite;
+    }
+    &::after {
+      opacity: 0.3;
+      @include bg-glitch-red(5px);
+      animation-duration: 5s;
+      animation-name: perload-lines-red;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+
+@keyframes perload-lines-smoky {
+  2% {
+    display: block;
+    @include transform(0, -2px, 0);
+    @include bg-glitch-smoky(3px);
+  }
+  5% {
+    display: none;
+  }
+  50% {
+    display: block;
+    @include transform(0, 4px, 0);
+    @include bg-glitch-smoky(5px);
+  }
+  70% {
+    display: none;
+  }
+  75% {
+    display: block;
+    @include transform(0, 1px, 0);
+    @include bg-glitch-smoky(1px);
+  }
+}
+
+@keyframes perload-lines-red {
+  12% {
+    display: block;
+    @include transform(0, -2px, 0);
+    @include bg-glitch-red(3px);
+  }
+  27% {
+    display: none;
+  }
+  50% {
+    display: block;
+    @include transform(0, 4px, 0);
+    @include bg-glitch-red(5px);
+  }
+  68% {
+    display: none;
+  }
+  77% {
+    display: block;
+    @include transform(0, 1px, 0);
+    @include bg-glitch-red(1px);
+  }
+}
+
+.preloader-block {
+  width: 90%;
+  max-width: 260px;
+  min-width: 220px;
+}
+
+.preload-icon {
+  display: none;
+  position: relative;
+  width: 260px;
+  height: 208px;
+  margin-bottom: 15px;
+  background: url("../img/GoodCrash.svg") center no-repeat;
+  background-size: cover;
+}
+
+.glitch .preload-icon {
+  display: block;
+}
+
+.red-fon {
+  position: absolute;
+  top: 50px;
+  left: 40px;
+  width: 180px;
+  height: 130px;
+  background: $crash;
+}
+
+.left-eyes {
+  position: absolute;
+  top: 85px;
+  left: 50px;
+  width: 55px;
+  height: 7px;
+  background: $white;
+  @include transform(0, 0, 0);
+}
+
+.crash .left-eyes {
+  @include transform(0, 0, 20deg);
+}
+
+.right-eyes {
+  position: absolute;
+  top: 85px;
+  left: 155px;
+  width: 55px;
+  height: 7px;
+  background: $white;
+  @include transform(0, 0, 0);
+}
+
+.crash .right-eyes {
+  @include transform(0, 0, -20deg);
+}
+
+.mouth {
+  position: absolute;
+  top: 142px;
+  left: 65px;
+  width: 130px;
+  height: 15px;
+  background: $white;
+  border-radius: 10px;
+  border: 1px solid $white;
+  @include transform(0, 0, 0);
+}
+
+.crash .mouth {
+  @include transform(0, 0, 20deg);
+}
+
+.tongue-bg {
+  position: absolute;
+  top: 152px;
+  left: 140px;
+  width: 30px;
+  height: 30px;
+  background: $crash;
+  @include transform(0, 0, 20deg);
+}
+
+.tongue {
+  position: absolute;
+  top: 134px;
+  left: 144px;
+  width: 25px;
+  height: 25px;
+  background: $white;
+  border: 1px solid $white;
+  border-radius: 20px;
+  border: 1px solid $white;
+  @include animation-when-event(2s, 0);
+  @include transform(-10%, 70%, 20deg);
+}
+
+.good-crash .tongue {
+  width: 30px;
+  height: 35px;
+  @include transform(0, 0, 20deg);
+}
+
+.preloader-ctx {
+  position: relative;
+  font-size: 0.825rem;
+  line-height: 1.25rem;
+  &::before,
+  &::after {
+    display: none;
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &::before {
+    left: 2px;
+    text-shadow: -1px 0 $red;
+    background: $black;
+    @include clip-path(0%, 0%, 100%, 0%, 100%, 100%, 0%, 100%);
+  }
+  &::after {
+    left: -2px;
+    text-shadow: 1px 0 $blue;
+    background: $black;
+    @include clip-path(0%, 0%, 100%, 0%, 100%, 100%, 0%, 100%);
+  }
+}
+
+.glitch .preloader-ctx {
+  &::before,
+  &::after {
+    display: inline-block;
+  }
+  &::before {
+    animation: glitch-tetx-before 4s infinite linear;
+  }
+  &::after {
+    animation: glitch-tetx-after 3s infinite linear;
+  }
+}
+
+@keyframes glitch-tetx-before {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      @include clip-path(
+        0%,
+        random(100) + px,
+        100%,
+        random(100) + px,
+        100%,
+        random(100) + px,
+        0%,
+        random(100) + px
+      );
+    }
+  }
+}
+@keyframes glitch-tetx-after {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      @include clip-path(
+        0%,
+        random(100) + px,
+        100%,
+        random(100) + px,
+        100%,
+        random(100) + px,
+        0%,
+        random(100) + px
+      );
+    }
+  }
+}
+
+.preloader-cursor {
+  padding: 0 0.2rem;
+  font-weight: bold;
+  color: $white;
+  background-color: $white;
+  animation-name: preloader-print-cursor;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.load .preloader-cursor {
+  display: none;
+  animation-name: none;
+}
+
+@keyframes preloader-print-cursor {
+  25% {
+    background-color: $black;
+    color: $black;
+  }
+  50% {
+    background-color: $white;
+    color: $white;
+  }
+  75% {
+    background-color: $black;
+    color: $black;
+  }
+}
+
+@media only screen and (max-width: $mobile_small) {
+  .glitch .preloader-block {
+    max-width: 180px;
+    min-width: 180px;
+  }
+  .preload-icon {
+    width: 180px;
+    height: 144px;
+  }
+  .red-fon {
+    top: 35px;
+    left: 28px;
+    width: 125px;
+    height: 90px;
+  }
+  .left-eyes {
+    top: 59px;
+    left: 35px;
+    width: 38px;
+    height: 5.5px;
+  }
+  .right-eyes {
+    top: 59px;
+    left: 108px;
+    width: 38px;
+    height: 5.5px;
+  }
+  .mouth {
+    top: 99px;
+    left: 45px;
+    width: 90px;
+    height: 10px;
+  }
+  .tongue-bg {
+    top: 106px;
+    left: 96px;
+    width: 21px;
+    height: 21px;
+  }
+  .tongue {
+    top: 93px;
+    left: 100px;
+    width: 17px;
+    height: 17px;
+  }
+  .good-crash .tongue {
+    width: 21px;
+    height: 24px;
+  }
+}

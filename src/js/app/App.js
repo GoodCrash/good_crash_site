@@ -1,5 +1,6 @@
 'use strict';
 
+import { Preloader } from './models/Preloader';
 import { getDOM } from './services/getDOM';
 import { locale } from './gettext/locale';
 import { runClock } from './services/clock';
@@ -38,7 +39,7 @@ export default class App {
    */
   init() {
     runClock(this.DOM.dataTimeEl);
-    this.run();
+    this._preload();
   }
 
   run() {
@@ -72,6 +73,16 @@ export default class App {
     this._removeClassListForNav();
     console.log(url);
     navigation.navigatingToUrl(url, this.lang, this.DOM.pagesContent);
+  }
+
+  /**
+   * When preloader.run() finish -> run this.start()
+   */
+  _preload() {
+    const preloader = new Preloader();
+    preloader.run().then(() => {
+      this._start();
+    });
   }
 
   /**

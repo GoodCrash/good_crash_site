@@ -152,14 +152,14 @@
   }
   &::before {
     opacity: 0.3;
-    @include bg-glitch-smoky($smoky, 5px);
+    @include bg-glitch-smoky(5px);
     animation-duration: 2s;
     animation-name: lines-smoky;
     animation-iteration-count: infinite;
   }
   &::after {
     opacity: 0.3;
-    @include bg-glitch-red($red, 5px);
+    @include bg-glitch-red(5px);
     animation-duration: 1s;
     animation-name: lines-red;
     animation-iteration-count: infinite;
@@ -170,7 +170,7 @@
   2% {
     display: block;
     @include transform(0, -2px, 0);
-    @include bg-glitch-smoky($smoky, 3px);
+    @include bg-glitch-smoky(3px);
   }
   5% {
     display: none;
@@ -178,7 +178,7 @@
   50% {
     display: block;
     @include transform(0, 4px, 0);
-    @include bg-glitch-smoky($smoky, 5px);
+    @include bg-glitch-smoky(5px);
   }
   70% {
     display: none;
@@ -186,7 +186,7 @@
   75% {
     display: block;
     @include transform(0, 1px, 0);
-    @include bg-glitch-smoky($smoky, 1px);
+    @include bg-glitch-smoky(1px);
   }
 }
 
@@ -194,7 +194,7 @@
   12% {
     display: block;
     @include transform(0, -2px, 0);
-    @include bg-glitch-red($red, 3px);
+    @include bg-glitch-red(3px);
   }
   27% {
     display: none;
@@ -202,7 +202,7 @@
   50% {
     display: block;
     @include transform(0, 4px, 0);
-    @include bg-glitch-red($red, 5px);
+    @include bg-glitch-red(5px);
   }
   68% {
     display: none;
@@ -210,7 +210,7 @@
   77% {
     display: block;
     @include transform(0, 1px, 0);
-    @include bg-glitch-red($red, 1px);
+    @include bg-glitch-red(1px);
   }
 }
 

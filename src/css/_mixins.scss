@@ -11,17 +11,17 @@
   box-shadow: $x $y $blur 0px $color;
 }
 
-@mixin bg-glitch-smoky($color, $t) {
+@mixin bg-glitch-smoky($t) {
   background: repeating-linear-gradient(
     0deg,
-    $color 0px,
-    $color 1px,
+    $smoky 0px,
+    $smoky 1px,
     transparent 2px,
     transparent $t
   );
 }
 
-@mixin bg-glitch-red($color, $t) {
+@mixin bg-glitch-red($t) {
   background: repeating-linear-gradient(
     0deg,
     $red 0px,
@@ -29,4 +29,8 @@
     transparent 1px,
     transparent $t
   );
+}
+
+@mixin clip-path($tlx, $tly, $trx, $try, $brx, $bry, $blx, $bly) {
+  clip-path: polygon($tlx $tly, $trx $try, $brx $bry, $blx $bly);
 }

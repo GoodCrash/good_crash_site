@@ -27,3 +27,11 @@ export function getDOM() {
     messengerBtn: document.querySelector('.messenger-send-btn'),
   };
 }
+
+export function getPreloaderDOM() {
+  return {
+    preloader: document.querySelector('.preloader'),
+    preloadIcon: document.querySelector('.preload-icon'),
+    preloaderCtx: document.querySelector('.preloader-ctx'),
+  };
+}
